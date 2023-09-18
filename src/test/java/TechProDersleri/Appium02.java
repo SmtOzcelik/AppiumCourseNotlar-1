@@ -30,8 +30,7 @@ public class Appium02 {
         // eger dosya şeklinde ise uygulam Apps den path yolu al direk gir Yok ise aşağıda ki gibi koda dök
         capabilities.setCapability("appPackage","com.davemac327.gesture.tool");
         capabilities.setCapability("appActivity","com.davemac327.gesture.tool.GestureBuilderActivity");
-        capabilities.setCapability("skipUnlock","true");
-        capabilities.setCapability("noReset","false");
+
         driver=new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         wait=new WebDriverWait(driver,10);
 
