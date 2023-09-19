@@ -71,7 +71,7 @@ public class Appium04 {
 
 
 
-        //driver.closeApp(); // driver kapatmak icin kullanilir
+        driver.closeApp(); // driver kapatmak icin kullanilir
 
     }
 
