@@ -1,9 +1,11 @@
 package TechProDersleri;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.remote.SupportsContextSwitching;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -11,12 +13,14 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 
 public class Appium06WebAppChrome {
-    public static AppiumDriver<MobileElement>driver;
+    public static AppiumDriver driver;
+    public WebDriverWait wait;
 
     @Test
     public void test() throws MalformedURLException {
@@ -30,28 +34,31 @@ public class Appium06WebAppChrome {
         capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"20000");
 
-        driver=new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
-        driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+        driver=new AndroidDriver (new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
+        wait=new WebDriverWait(driver,Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://www.amazon.com");
 
+        System.out.println(((SupportsContextSwitching) driver).getContext()+" app acıldığında tur");
+        Set<String>butunturler=((SupportsContextSwitching) driver).getContextHandles();
 
-
-        System.out.println(driver.getContext()+"---app acıldıgında tur ---");
-        //driver acildiktan sonra 2 tür ilerleme var uygulama hangisinde kurulu ise ona gecip devam etmeliyiz
-        // aplikasyonun hangi türde oldugunu görmek icin getContextHandles() kullaniyoruz
-        Set<String> butunturler=driver.getContextHandles();
+        System.out.println("butunturler = " + butunturler);
         for (String tur:butunturler
-        ) {
-            System.out.println(tur);
+             ) {
             if (tur.contains("WEBVIEW_chrome")){
-                driver.context(tur);
+                ((SupportsContextSwitching) driver).context(tur);
             }
+
         }
-        System.out.println(driver.getContext()+"---degisim sonrasi tur");
+        System.out.println(((SupportsContextSwitching) driver).getContext()+" app acildiktan sonra tur");
+
+        // driver.findElement(By.xpath("//android.view.View[@content-desc=\"Sign in ›\"]/android.widget.TextView")).click();
 
 
 
-        driver.closeApp(); // driver kapatmak icin kullanilir
+
+       // driver.close(); // driver kapatmak icin kullanilir
+
 
     }
 

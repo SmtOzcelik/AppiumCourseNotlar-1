@@ -1,20 +1,22 @@
 package TechProDersleri;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class Appium02 {
-    public static AppiumDriver<MobileElement>driver;
+    public static AppiumDriver driver;
     public WebDriverWait wait;
     @Test
     public void test() throws MalformedURLException {
@@ -31,13 +33,13 @@ public class Appium02 {
         capabilities.setCapability("appPackage","com.davemac327.gesture.tool");
         capabilities.setCapability("appActivity","com.davemac327.gesture.tool.GestureBuilderActivity");
 
-        driver=new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
-        wait=new WebDriverWait(driver,10);
+        driver=new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
+        wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
         driver.findElement(By.id("com.android.permissioncontroller:id/continue_button")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        MobileElement okButton=driver.findElement(By.id("android:id/button1"));
+
+        WebElement okButton=driver.findElement(By.id("android:id/button1"));
         okButton.click();
 
     }

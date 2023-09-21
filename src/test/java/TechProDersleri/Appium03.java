@@ -2,10 +2,11 @@ package TechProDersleri;
 
 import Apponte.utilities.ApponteBeforeAfterTest;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -13,11 +14,12 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 
 public class Appium03 {
-    public static AppiumDriver<MobileElement>driver;
+    public static AppiumDriver driver;
     public WebDriverWait wait;
     @Test
     public void test() throws MalformedURLException {
@@ -37,27 +39,27 @@ public class Appium03 {
         capabilities.setCapability("noReset","false");
         // bu kod sayesinde işlem bitti mi telefonu ilk haline getirir ve tekrar teste hazır olur
 
-        driver=new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
-        wait=new WebDriverWait(driver,10);
+        driver=new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
+        wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 
         System.out.println("app yüklendi");
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         driver.findElement(By.id("com.android.permissioncontroller:id/continue_button")).click();
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        MobileElement okButton=driver.findElement(By.id("android:id/button1"));
+        WebElement okButton=driver.findElement(By.id("android:id/button1"));
         okButton.click();
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        MobileElement homeScreenTitle=driver.findElementById("android:id/title");
+        WebElement homeScreenTitle=driver.findElement(By.id("android:id/title"));
         Assert.assertTrue(homeScreenTitle.isDisplayed());
         System.out.println("Ana sayfa acıldi");
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        MobileElement testButon=driver.findElementById("com.davemac327.gesture.tool:id/testButton");
+        WebElement testButon=driver.findElement(By.id("com.davemac327.gesture.tool:id/testButton"));
         testButon.click();
         System.out.println("Test butonu calisiyor");
 
 
 
-        driver.closeApp(); // driver kapatmak icin kullanilir
+        driver.close(); // driver kapatmak icin kullanilir
 
     }
 

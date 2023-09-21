@@ -1,7 +1,7 @@
 package Apponte.utilities;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -11,10 +11,11 @@ import org.testng.annotations.BeforeTest;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class ApponteBeforeAfterTest {
-    public static AppiumDriver<MobileElement>driver;
+    public static AppiumDriver driver;
     public WebDriverWait wait;
 
     @BeforeTest
@@ -29,19 +30,16 @@ public class ApponteBeforeAfterTest {
         capabilities.setCapability("appActivity","mobi.appcent.apponte.ui.activity.login.LoginActivity");
         capabilities.setCapability("skipUnlock","true");
         capabilities.setCapability("noReset","false");
-        driver=new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
-        wait=new WebDriverWait(driver,10);
+        driver=new AndroidDriver (new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
+        wait=new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
 
     @AfterTest
     public void afterTest(){
-
+      driver.quit();
     }
 
-    public void waitt(int min){
 
-         driver.manage().timeouts().implicitlyWait(min, TimeUnit.SECONDS);
-    }
 
 }
