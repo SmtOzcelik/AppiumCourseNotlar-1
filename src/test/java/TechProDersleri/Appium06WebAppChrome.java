@@ -52,6 +52,9 @@ public class Appium06WebAppChrome {
         }
         System.out.println(((SupportsContextSwitching) driver).getContext()+" app acildiktan sonra tur");
 
+
+
+
         // driver.findElement(By.xpath("//android.view.View[@content-desc=\"Sign in ›\"]/android.widget.TextView")).click();
 
 
