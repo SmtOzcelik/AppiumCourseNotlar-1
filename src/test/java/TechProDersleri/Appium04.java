@@ -7,6 +7,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -42,19 +43,19 @@ public class Appium04 {
         wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 
         System.out.println("app yüklendi");
-        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(By.id("com.android.permissioncontroller:id/continue_button")).click();
-        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         WebElement okButton=driver.findElement(By.id("android:id/button1"));
         okButton.click();
-        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         WebElement homeScreenTitle=driver.findElement(By.id("android:id/title"));
         Assert.assertTrue(homeScreenTitle.isDisplayed());
         System.out.println("Ana sayfa acıldi");
-        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         WebElement addGestureButon=driver.findElement(By.id("com.davemac327.gesture.tool:id/addButton"));
         addGestureButon.click();
-        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         WebElement createGestureText=driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.TextView"));
         System.out.println(createGestureText.getText().toString());
         Assert.assertTrue(createGestureText.getText().contains("Create a gesture"));
@@ -64,11 +65,12 @@ public class Appium04 {
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         driver.navigate().back();
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        WebElement ekran=driver.findElement(By.id("com.davemac327.gesture.tool:id/gestures_overlay"));
-        ekran.click();
+        //WebElement ekran=driver.findElement(By.id("com.davemac327.gesture.tool:id/gestures_overlay"));
+        //ekran.click();
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        WebElement doneButon=driver.findElement(By.id("com.davemac327.gesture.tool:id/done"));
-        doneButon.click();
+        By doneButon=By.id("com.davemac327.gesture.tool:id/done");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(doneButon)).click();
+
 
 
 
