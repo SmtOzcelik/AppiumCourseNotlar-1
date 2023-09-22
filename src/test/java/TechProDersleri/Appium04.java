@@ -62,12 +62,11 @@ public class Appium04 {
         System.out.println("add Gesture sayfasi acıldi");
         WebElement nameBox=driver.findElement(By.id("com.davemac327.gesture.tool:id/gesture_name"));
         nameBox.sendKeys("samet");
-        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        driver.navigate().back();
-        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        //WebElement ekran=driver.findElement(By.id("com.davemac327.gesture.tool:id/gestures_overlay"));
-        //ekran.click();
-        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+        WebElement ekran=driver.findElement(By.id("com.davemac327.gesture.tool:id/gestures_overlay"));
+        ekran.click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         By doneButon=By.id("com.davemac327.gesture.tool:id/done");
         wait.until(ExpectedConditions.visibilityOfElementLocated(doneButon)).click();
 
