@@ -70,6 +70,7 @@ public class Appium06NativeChrome {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.View[@content-desc=\"Sepetim\"]/android.view.View"))).click();
 
         //sepetde oldugumuzu dogruladik
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         By sepetBos=AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View/android.view.View[3]/android.view.View/android.view.View[1]");
         String sepetBosText=wait.until(ExpectedConditions.visibilityOfElementLocated(sepetBos)).getText();
         Assert.assertTrue(sepetBosText.contains("Sepetin Boş Görünüyor"));
