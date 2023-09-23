@@ -34,7 +34,7 @@ public class Appium08UiSelector {
         capabilities.setCapability("appPackage","com.davemac327.gesture.tool");
         capabilities.setCapability("appActivity","com.davemac327.gesture.tool.GestureBuilderActivity");
 
-        capabilities.setCapability("noReset","false");
+        capabilities.setCapability("noReset","true");
         // bu kod sayesinde işlem bitti mi telefonu ilk haline getirir ve tekrar teste hazır olur
 
         driver=new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
