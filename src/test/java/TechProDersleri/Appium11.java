@@ -1,13 +1,10 @@
 package TechProDersleri;
 
-import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -17,7 +14,7 @@ import java.net.URL;
 import java.time.Duration;
 
 
-public class Appium10 {
+public class Appium11 {
     public static AppiumDriver driver;
     public WebDriverWait wait;
     @Test
@@ -35,7 +32,7 @@ public class Appium10 {
         capabilities.setCapability("noReset","false");
         // bu kod sayesinde işlem bitti mi telefonu ilk haline getirir ve tekrar teste hazır olur
 
-        // Test=Wife Setting e samet yazdır
+        // Test=Wife Setting e samet yazdır Eğer kutu tikli değilse  isSelected() metodu ile
 
         driver=new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         wait=new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -60,29 +57,36 @@ public class Appium10 {
         driver.findElement(By.xpath("//android.widget.TextView[@text='3. Preference dependencies']")).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-        //Wifi settings ulaşilamadiğini dogrulayalim enable=false
-        String isFalse=driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.TextView")).getAttribute("enabled");
-        Assert.assertEquals(isFalse,"false");
+        By box=By.id("android:id/checkbox");
+        if(!driver.findElement(box).isSelected()){//secili değilse
+            // isSelected yerine getAttribute("checked") dan false mi ise şeklinde de yapılır
+            //wifi kutu tik yap
+            driver.findElement(box).click();
 
-        //wifi kutu tik yap
-        driver.findElement(By.id("android:id/checkbox")).click();
+            //wifi setting ulaşılabilir oldugunu dogrula enable=true
+            String isTrue=driver.findElement(By.xpath("//android.widget.TextView[@text='WiFi settings']")).getAttribute("enabled");
+            Assert.assertEquals(isTrue,"true");
 
-        //wifi setting ulaşılabilir oldugunu dogrula enable=true
-        String isTrue=driver.findElement(By.xpath("//android.widget.TextView[@text='WiFi settings']")).getAttribute("enabled");
-        Assert.assertEquals(isTrue,"true");
+            //wifi setting tik yap
+            driver.findElement(By.xpath("//android.widget.TextView[@text='WiFi settings']")).click();
 
-        //wifi setting tik yap
-        driver.findElement(By.xpath("//android.widget.TextView[@text='WiFi settings']")).click();
+            // wifi setting pencersinin acıldığını doğrula
+            Assert.assertTrue(driver.findElement(By.id("android:id/alertTitle")).isDisplayed());
 
-        // wifi setting pencersinin acıldığını doğrula
-        Assert.assertTrue(driver.findElement(By.id("android:id/alertTitle")).isDisplayed());
+            //wifi settings text gönder samet olsun
+            driver.findElement(By.id("android:id/edit")).sendKeys("samet");
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-        //wifi settings text gönder samet olsun
-        driver.findElement(By.id("android:id/edit")).sendKeys("samet");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+            //ok butonuna tik yap
+            driver.findElement(By.id("android:id/button1")).click();
 
-        //ok butonuna tik yap
-        driver.findElement(By.id("android:id/button1")).click();
+        }else { // secili ise
+            //wifi setting ulaşılabilir oldugunu dogrula enable=true
+            String isTrue=driver.findElement(By.xpath("//android.widget.TextView[@text='WiFi settings']")).getAttribute("enabled");
+            Assert.assertEquals(isTrue,"true");
+            System.out.println("wifi box zaten seçeli");
+        }
+
 
         driver.quit(); // driver kapatmak icin kullanilir
 
