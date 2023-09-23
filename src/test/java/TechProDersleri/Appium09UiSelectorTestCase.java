@@ -15,7 +15,7 @@ import java.net.URL;
 import java.time.Duration;
 
 
-public class Appium08UiSelectorTestCase {
+public class Appium09UiSelectorTestCase {
     public static AppiumDriver driver;
     public WebDriverWait wait;
     @Test
