@@ -1,10 +1,13 @@
 package TechProDersleri;
 
+import BasePackage.ApiDemosBaseClass;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,28 +17,15 @@ import java.net.URL;
 import java.time.Duration;
 
 
-public class Appium11 {
-    public static AppiumDriver driver;
-    public WebDriverWait wait;
+public class Appium11 extends ApiDemosBaseClass {
+
     @Test
     public void test() throws MalformedURLException, InterruptedException {
-        DesiredCapabilities capabilities=new DesiredCapabilities();
 
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 4 API 29");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
-        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
-
-        capabilities.setCapability("appPackage","com.touchboarder.android.api.demos");
-        capabilities.setCapability("appActivity","com.touchboarder.androidapidemos.MainActivity");
-
-        capabilities.setCapability("noReset","false");
-        // bu kod sayesinde işlem bitti mi telefonu ilk haline getirir ve tekrar teste hazır olur
+        AndroidDriver driver=getAndoridDriver();
 
         // Test=Wife Setting e samet yazdır Eğer kutu tikli değilse  isSelected() metodu ile
 
-        driver=new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
-        wait=new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         //continue tik yap
@@ -84,9 +74,8 @@ public class Appium11 {
             //wifi setting ulaşılabilir oldugunu dogrula enable=true
             String isTrue=driver.findElement(By.xpath("//android.widget.TextView[@text='WiFi settings']")).getAttribute("enabled");
             Assert.assertEquals(isTrue,"true");
-            System.out.println("wifi box zaten seçeli");
+            System.out.println("wifi box zaten seçili");
         }
-
 
         driver.quit(); // driver kapatmak icin kullanilir
 
