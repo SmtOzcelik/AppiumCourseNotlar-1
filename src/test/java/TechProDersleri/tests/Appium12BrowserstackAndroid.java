@@ -20,9 +20,9 @@ public class Appium12BrowserstackAndroid {
     @Test
 public void browserstackAndroid() throws MalformedURLException {
 
-        String userName="sametzelik_m4h7nO";
+        String userName="sametzelik_m4h7nO";// bu bilgileri site kendisi veriyor
         String key="7xuyqMgsHp1cKRx7vAC9";
-        //String url="http://"+userName+":"+key+"@sametzelik_m4h7no.browserstack.com";
+
 
         DesiredCapabilities capabilities=new DesiredCapabilities();
         capabilities.setCapability("browserstack.user",userName);
@@ -30,10 +30,14 @@ public void browserstackAndroid() throws MalformedURLException {
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 4 API 29");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
         capabilities.setCapability("app","bs://6837a629be27d35e524370c9edefab433d7a2668");
+        //Bu kod app i yükleyince kendisi veriyor
         capabilities.setCapability("browserstackLocal",true);
         capabilities.setCapability("project","Appium Project");
         capabilities.setCapability("build","browserstack-1");
         capabilities.setCapability("name","sample_test");
+        //verileri caps icine doldur aşağıdaki url yi güncelledikten sonra localde değilde bulutta calışıyor
+        // tek fark testin uzakta calışması ve yukarıdaki proje isimleri değişik şekilde yazılabilr
+
         AndroidDriver driver=new AndroidDriver(new URL("http://hub.browserstack.com/wd/hub"),capabilities);
 
         // Test=Wife Setting e samet yazdır Eğer kutu tikli değilse  isSelected() metodu ile
