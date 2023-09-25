@@ -1,14 +1,13 @@
-package TechProDersleri;
+package TechProDersleri.tests;
 
-import BasePackage.ApiDemosBaseClass;
-import io.appium.java_client.AppiumDriver;
+import ch.qos.logback.classic.LoggerContext;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,13 +15,26 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-
-public class Appium11 extends ApiDemosBaseClass {
+public class Appium12BrowserstackAndroid {
 
     @Test
-    public void test() throws MalformedURLException, InterruptedException {
+public void browserstackAndroid() throws MalformedURLException {
 
-        AndroidDriver driver=getAndoridDriver();
+        String userName="sametzelik_m4h7nO";
+        String key="7xuyqMgsHp1cKRx7vAC9";
+        //String url="http://"+userName+":"+key+"@sametzelik_m4h7no.browserstack.com";
+
+        DesiredCapabilities capabilities=new DesiredCapabilities();
+        capabilities.setCapability("browserstack.user",userName);
+        capabilities.setCapability("browserstack.key",key);
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 4 API 29");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
+        capabilities.setCapability("app","bs://6837a629be27d35e524370c9edefab433d7a2668");
+        capabilities.setCapability("browserstackLocal",true);
+        capabilities.setCapability("project","Appium Project");
+        capabilities.setCapability("build","browserstack-1");
+        capabilities.setCapability("name","sample_test");
+        AndroidDriver driver=new AndroidDriver(new URL("http://hub.browserstack.com/wd/hub"),capabilities);
 
         // Test=Wife Setting e samet yazdır Eğer kutu tikli değilse  isSelected() metodu ile
 
@@ -80,5 +92,4 @@ public class Appium11 extends ApiDemosBaseClass {
         driver.quit(); // driver kapatmak icin kullanilir
 
     }
-
 }

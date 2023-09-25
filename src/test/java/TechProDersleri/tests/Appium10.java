@@ -1,45 +1,22 @@
-package TechProDersleri;
+package TechProDersleri.tests;
 
-import io.appium.java_client.AppiumBy;
-import io.appium.java_client.AppiumDriver;
+import TechProDersleri.BasePackage.ApiDemosBaseClass;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.time.Duration;
 
 
-public class Appium10 {
-    public static AppiumDriver driver;
-    public WebDriverWait wait;
+public class Appium10 extends ApiDemosBaseClass {
+
     @Test
     public void test() throws MalformedURLException, InterruptedException {
-        DesiredCapabilities capabilities=new DesiredCapabilities();
-
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 4 API 29");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
-        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
-
-        capabilities.setCapability("appPackage","com.touchboarder.android.api.demos");
-        capabilities.setCapability("appActivity","com.touchboarder.androidapidemos.MainActivity");
-
-        capabilities.setCapability("noReset","false");
-        // bu kod sayesinde işlem bitti mi telefonu ilk haline getirir ve tekrar teste hazır olur
+        AndroidDriver driver=getAndoridDriver();
 
         // Test=Wife Setting e samet yazdır
-
-        driver=new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
-        wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         //continue tik yap
         driver.findElement(By.id("com.android.permissioncontroller:id/continue_button")).click();

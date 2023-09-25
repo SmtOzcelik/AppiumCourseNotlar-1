@@ -1,4 +1,4 @@
-package TechProDersleri;
+package TechProDersleri.tests;
 
 import Apponte.utilities.ApponteBeforeAfterTest;
 import io.appium.java_client.AppiumDriver;
