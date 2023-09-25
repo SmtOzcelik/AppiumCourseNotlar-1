@@ -15,6 +15,7 @@ public class ApiDemosBaseClass {
     public WebDriverWait wait;
     @Test
     public AndroidDriver getAndoridDriver() throws MalformedURLException {
+
         DesiredCapabilities capabilities=new DesiredCapabilities();
 
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 4 API 29");
