@@ -1,19 +1,19 @@
 package TechProDersleri.tests.Day8_Switch;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
-import TechProDersleri.screens.androidScreen.*;
+import TechProDersleri.screens.androidScreen.ApiDemosScreen;
+import TechProDersleri.screens.androidScreen.MainScreen;
+import TechProDersleri.screens.androidScreen.PreferenceScreen;
+import TechProDersleri.screens.androidScreen.SwitchScreen;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Screenshot;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.time.Duration;
 
 
-public class Appium14 extends ApiDemosBaseClass {
+public class Appium15 extends ApiDemosBaseClass {
     ApiDemosScreen apiDemosScreen=new ApiDemosScreen();
     MainScreen mainScreen=new MainScreen();
     SwitchScreen switchScreen=new SwitchScreen();
@@ -22,7 +22,7 @@ public class Appium14 extends ApiDemosBaseClass {
     public void test() throws IOException, InterruptedException {
 
 
-        // switch checkbox tikli ve first switch açık
+        // switch test checkbox tikli, firstswitch kapali, secondswitch acık
 
         //continue tik yap
         driver.findElement(mainScreen.contineButon).click();
