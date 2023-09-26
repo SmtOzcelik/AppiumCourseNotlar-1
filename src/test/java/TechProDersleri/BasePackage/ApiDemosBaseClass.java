@@ -13,7 +13,7 @@ import java.net.URL;
 import java.time.Duration;
 
 public class ApiDemosBaseClass {
-    public AndroidDriver driver;
+    public static AndroidDriver driver;
     public WebDriverWait wait;
     @BeforeMethod
     public void setUp() throws MalformedURLException {
