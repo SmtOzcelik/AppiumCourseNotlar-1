@@ -1,4 +1,4 @@
-package TechProDersleri.tests;
+package TechProDersleri.tests.Day5_Befor_AfterMetod;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
 import io.appium.java_client.android.AndroidDriver;
@@ -14,7 +14,7 @@ public class Appium10 extends ApiDemosBaseClass {
 
     @Test
     public void test() throws MalformedURLException, InterruptedException {
-        AndroidDriver driver=getAndoridDriver();
+
 
         // Test=Wife Setting e samet yazdır
 
@@ -61,7 +61,6 @@ public class Appium10 extends ApiDemosBaseClass {
         //ok butonuna tik yap
         driver.findElement(By.id("android:id/button1")).click();
 
-        driver.quit(); // driver kapatmak icin kullanilir
 
     }
 

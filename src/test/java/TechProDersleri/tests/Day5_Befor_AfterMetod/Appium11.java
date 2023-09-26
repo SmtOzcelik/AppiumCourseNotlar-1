@@ -1,4 +1,4 @@
-package TechProDersleri.tests;
+package TechProDersleri.tests.Day5_Befor_AfterMetod;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
 import io.appium.java_client.android.AndroidDriver;
@@ -15,7 +15,6 @@ public class Appium11 extends ApiDemosBaseClass {
     @Test
     public void test() throws MalformedURLException, InterruptedException {
 
-        AndroidDriver driver=getAndoridDriver();
 
         // Test=Wife Setting e samet yazdır Eğer kutu tikli değilse  isSelected() metodu ile
 

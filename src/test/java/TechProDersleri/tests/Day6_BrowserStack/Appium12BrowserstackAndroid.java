@@ -1,13 +1,9 @@
-package TechProDersleri.tests;
+package TechProDersleri.tests.Day6_BrowserStack;
 
-import ch.qos.logback.classic.LoggerContext;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
-import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

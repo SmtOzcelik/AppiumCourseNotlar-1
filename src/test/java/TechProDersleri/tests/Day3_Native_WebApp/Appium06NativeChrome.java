@@ -1,11 +1,9 @@
-package TechProDersleri.tests;
+package TechProDersleri.tests.Day3_Native_WebApp;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 
-import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileBrowserType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.remote.SupportsContextSwitching;
 import org.openqa.selenium.By;
@@ -21,35 +19,36 @@ import java.time.Duration;
 import java.util.Set;
 
 
-public class Appium07WebAppChrome {
+public class Appium06NativeChrome {
     public static AppiumDriver driver;
     public WebDriverWait wait;
-
     @Test
-    public void test() throws MalformedURLException {
+    public void test() throws MalformedURLException, InterruptedException {
         DesiredCapabilities capabilities=new DesiredCapabilities();
 
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 4 API 29");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
-        //capabilities.setCapability("noReset","true");//false oldumu tel başa döner,true ayarlar aynı kalır
-        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, MobileBrowserType.CHROME);
-        //capabilities.setCapability("chromeDriverExecutable","/Users/sametozcelik/Desktop/AppiumTumDesrler/src/driver/chromedriver");
 
+        capabilities.setCapability("appPackage","com.android.chrome");
+        capabilities.setCapability("appActivity","org.chromium.chrome.browser.ChromeTabbedActivity");
+        capabilities.setCapability("noReset","true");
+        // bu kod sayesinde işlem bitti mi telefonu ilk haline getirir ve tekrar teste hazır olur
 
-
-        driver=new AndroidDriver (new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
-        wait=new WebDriverWait(driver,Duration.ofSeconds(20));
+        driver=new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
+        wait=new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
         driver.get("https://www.n11.com");
+
 
         System.out.println(((SupportsContextSwitching) driver).getContext()+" app acıldığında tur");
         Set<String>butunturler=((SupportsContextSwitching) driver).getContextHandles();
 
         System.out.println("butunturler = " + butunturler);
         for (String tur:butunturler
-             ) {
+        ) {
             if (tur.contains("WEBVIEW_chrome")){
                 ((SupportsContextSwitching) driver).context(tur);
             }
@@ -57,9 +56,9 @@ public class Appium07WebAppChrome {
         }
         System.out.println(((SupportsContextSwitching) driver).getContext()+" app acildiktan sonra tur");
 
+
         // anasayfada oldugumuzu dogruladik
         By girisYap=AppiumBy.xpath("//android.view.View[@content-desc=\"Giriş Yap / Üye Ol\"]/android.widget.TextView");
-
         String girisYapText=wait.until(ExpectedConditions.visibilityOfElementLocated(girisYap)).getText();
         Assert.assertTrue(girisYapText.contains("Giriş Yap / Üye Ol"));
 
@@ -73,8 +72,7 @@ public class Appium07WebAppChrome {
         Assert.assertTrue(sepetBosText.contains("Sepetin Boş Görünüyor"));
 
 
-       driver.close(); // driver kapatmak icin kullanilir
-
+        driver.quit(); // driver kapatmak icin kullanilir
 
     }
 

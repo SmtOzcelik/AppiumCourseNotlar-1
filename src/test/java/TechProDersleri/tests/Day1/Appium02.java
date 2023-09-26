@@ -1,4 +1,4 @@
-package TechProDersleri.tests;
+package TechProDersleri.tests.Day1;
 
 import io.appium.java_client.AppiumDriver;
 

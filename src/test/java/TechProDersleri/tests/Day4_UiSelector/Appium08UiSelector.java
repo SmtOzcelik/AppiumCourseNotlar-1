@@ -1,11 +1,14 @@
-package TechProDersleri.tests;
+package TechProDersleri.tests.Day4_UiSelector;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.remote.SupportsContextSwitching;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,9 +16,10 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.Set;
 
 
-public class Appium09UiSelectorTestCase {
+public class Appium08UiSelector {
     public static AppiumDriver driver;
     public WebDriverWait wait;
     @Test
@@ -30,7 +34,7 @@ public class Appium09UiSelectorTestCase {
         capabilities.setCapability("appPackage","com.davemac327.gesture.tool");
         capabilities.setCapability("appActivity","com.davemac327.gesture.tool.GestureBuilderActivity");
 
-        capabilities.setCapability("noReset","false");
+        capabilities.setCapability("noReset","true");
         // bu kod sayesinde işlem bitti mi telefonu ilk haline getirir ve tekrar teste hazır olur
 
         driver=new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
@@ -49,26 +53,6 @@ public class Appium09UiSelectorTestCase {
         driver.findElement(AppiumBy.androidUIAutomator("UiSelector().resourceId(\"com.davemac327.gesture.tool:id/addButton\")")).click();
         //driver.findElement(AppiumBy.androidUIAutomator("UiSelector().className(\"android.widget.Button\").textStartWith(\"Add\")")).click(); yukarıda id ile yaptık
 
-        // burda name yerine bi şeyler yazılmadığı icin done aktif değil onun testini yapalim enable=false durumu
-        String isFalse=driver.findElement(AppiumBy.androidUIAutomator("UiSelector().resourceId(\"com.davemac327.gesture.tool:id/done\").enabled(false)")).getAttribute("enabled");
-        Assert.assertEquals(isFalse,"false"); //false string olarak döneceği icin "" kullandık
-
-        // şimdi box içinde yazalim ki Done tıklanabilir enable=true durumuna gelsin
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.findElement(AppiumBy.androidUIAutomator("UiSelector().resourceId(\"com.davemac327.gesture.tool:id/gesture_name\")")).sendKeys("Samet");
-        Thread.sleep(5);
-        WebElement blackScreen=driver.findElement(AppiumBy.id("com.davemac327.gesture.tool:id/gestures_overlay"));
-        blackScreen.click();
-
-
-        Thread.sleep(3);
-
-
-        //şimdi de done butuonu ulaşilabilir tıklanabilir enable=true halde mi onu dogruluyalim
-        String isTrue=driver.findElement(AppiumBy.androidUIAutomator("UiSelector().resourceId(\"com.davemac327.gesture.tool:id/done\").enabled(true)")).getAttribute("enabled");
-        Assert.assertEquals(isTrue,"true");
-
-        System.out.println("Done button aktif");
 
 
         /*
