@@ -1,4 +1,4 @@
-package TechProDersleri.tests.Day8_Switch;
+package TechProDersleri.tests.Day9_DragandDrop;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
 import TechProDersleri.screens.androidScreen.ApiDemosScreen;
@@ -13,7 +13,7 @@ import utilities.Screenshot;
 import java.io.IOException;
 
 
-public class Appium15 extends ApiDemosBaseClass {
+public class Appium16 extends ApiDemosBaseClass {
     ApiDemosScreen apiDemosScreen=new ApiDemosScreen();
     MainScreen mainScreen=new MainScreen();
     SwitchScreen switchScreen=new SwitchScreen();
