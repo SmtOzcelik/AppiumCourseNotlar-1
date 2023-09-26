@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.Screenshot;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.Duration;
 
@@ -17,7 +19,7 @@ public class Appium14 extends ApiDemosBaseClass {
     SwitchScreen switchScreen=new SwitchScreen();
     PreferenceScreen preferenceScreen=new PreferenceScreen();
     @Test
-    public void test() throws MalformedURLException, InterruptedException {
+    public void test() throws IOException, InterruptedException {
 
 
         // Test=Wife Setting e samet yazdır
@@ -53,8 +55,12 @@ public class Appium14 extends ApiDemosBaseClass {
         if (!checkBoxx.isSelected()){
             checkBoxx.click();
         }
-        //first switch
 
+        //first switch tik yap
+        driver.findElement(switchScreen.firstSwitch).click();
+
+        //ekran görüntüsü al
+        Screenshot.screenshot(driver);
 
     }
 
