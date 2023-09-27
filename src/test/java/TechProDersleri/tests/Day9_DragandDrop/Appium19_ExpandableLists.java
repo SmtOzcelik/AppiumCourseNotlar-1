@@ -55,7 +55,7 @@ public class Appium19_ExpandableLists extends ApiDemosBaseClass {
         // Sample menu görünürlügünü dogrula
         ReusableMethods.isElementPresent("Sample menu");
 
-        //
+
 
     }
 
