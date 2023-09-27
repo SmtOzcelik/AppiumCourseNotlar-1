@@ -9,6 +9,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+import utilities.ReusableMethods;
+
+import java.util.List;
 
 public class Appium21_ScrollingMetodlu extends ApiDemosBaseClass {
 
@@ -25,34 +28,31 @@ public class Appium21_ScrollingMetodlu extends ApiDemosBaseClass {
         ScreenApiDemos.API_Demos_sayfasinda_oldugunu_dogrula();
         ScreenApiDemos.Views_tik_yap();
 
-        Dimension dimension=driver.manage().window().getSize();
-        int start_x= (int) (dimension.width*0.5);
-        int start_y= (int) (dimension.height*0.8);
-
-        int end_x= (int) (dimension.width*0.5);
-        int end_y= (int) (dimension.height*0.2);
-
-        TouchAction touchAction=new TouchAction(driver);
-
-        touchAction.press(PointOption.point(start_x,start_y))
-                .moveTo(PointOption.point(end_x,end_y))
-                .release().perform();
-        touchAction.press(PointOption.point(start_x,start_y))
-                .moveTo(PointOption.point(end_x,end_y))
-                .release().perform();
-
-
         //Switches tik yap
-        //ReusableMethods.tapOnElementWithText("Switches"); bu metodlu hali buluyor tik yapiyor
+        ReusableMethods.tapOnElementWithText("Switches"); //bu metodlu hali buluyor tik yapiyor
 
-        WebElement switchesButon= driver.findElement(By.xpath("//android.widget.TextView[@text='Switches']"));
-        Boolean arama;
+        /*
+        List<WebElement> switchesButon= driver.findElements(By.xpath("//android.widget.TextView[@text='Switches']"));
+        List<WebElement> list;
         do {
-            arama=switchesButon.isDisplayed();
-            if (arama==true){
+            list=switchesButon;
+            Dimension dimension=driver.manage().window().getSize();
+            int start_x= (int) (dimension.width*0.5);
+            int start_y= (int) (dimension.height*0.8);
 
-            }
-        }while (arama);
+            int end_x= (int) (dimension.width*0.5);
+            int end_y= (int) (dimension.height*0.2);
 
+            TouchAction touchAction=new TouchAction(driver);
+
+            touchAction.press(PointOption.point(start_x,start_y))
+                    .moveTo(PointOption.point(end_x,end_y))
+                    .release().perform();
+        wait(3);
+        }while (list.size()==0);
+
+        ReusableMethods.tapOn(switchesButon.get(0));
+
+         */
     }
 }
