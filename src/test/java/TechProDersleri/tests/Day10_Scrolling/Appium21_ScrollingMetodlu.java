@@ -30,6 +30,7 @@ public class Appium21_ScrollingMetodlu extends ApiDemosBaseClass {
 
         //Switches tik yap
         ReusableMethods.tapOnElementWithText("Switches"); //bu metodlu hali buluyor tik yapiyor
+        // bu metodun icinde scroll uiSelector  da var bulamazsa aşağı kaydırıp bulup tik yapiyor
 
         /*
         List<WebElement> switchesButon= driver.findElements(By.xpath("//android.widget.TextView[@text='Switches']"));

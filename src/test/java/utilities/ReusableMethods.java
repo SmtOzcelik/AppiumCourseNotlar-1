@@ -14,8 +14,11 @@ import java.util.List;
 
 
 public class ReusableMethods extends ApiDemosBaseClass {
+    // bu metodlar apiDemos uygulamasında locateler hep text üzerinden oldugu icin ona göre düzenlmiştir.
+    // başka yerlerde kullanılacaksa düzenlenip application a göre şekillendirilir
 
          public static void tapOnElementWithText(String text) {
+             //elemente tik yap o anda bulamazsan scroll yap bul tik yap en kapsamlısı bu oldu
             List<WebElement> mobileElementList = driver.findElements(By.className("android.widget.TextView"));
             for (WebElement page: mobileElementList
             ) {
@@ -39,6 +42,7 @@ public class ReusableMethods extends ApiDemosBaseClass {
 
 
     public static boolean isElementPresent(String text) {
+        // element görünüyor mu?
         boolean elementFound = false;
         List<WebElement> mobileElementList = driver.findElements(By.xpath("//android.widget.TextView[@text='" + text + "']"));
         for (WebElement el : mobileElementList) {
@@ -98,6 +102,7 @@ public class ReusableMethods extends ApiDemosBaseClass {
     }
 
     public static void scrollWithUiScrollable(String elementText) {
+        // elementi ara bul scroll yap tik yap
         AndroidDriver driverr = (AndroidDriver)driver ;
         driverr.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+elementText+"\"))"));
         tapOn(driverr.findElement(By.xpath("//android.widget.TextView[@text='" + elementText + "']")));
