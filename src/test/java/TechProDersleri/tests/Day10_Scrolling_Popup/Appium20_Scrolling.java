@@ -1,20 +1,13 @@
-package TechProDersleri.tests.Day10_Scrolling;
+package TechProDersleri.tests.Day10_Scrolling_Popup;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
 import TechProDersleri.MetodStepler.ScreenApiDemos;
 import TechProDersleri.MetodStepler.ScreenMain;
 import TechProDersleri.screens.androidScreen.ViewsScreen;
-import com.microsoft.playwright.impl.T;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilities.ReusableMethods;
-
-import java.awt.*;
 
 public class Appium20_Scrolling extends ApiDemosBaseClass {
 

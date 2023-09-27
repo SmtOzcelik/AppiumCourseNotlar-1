@@ -413,3 +413,43 @@
 17:46:32.717 [ApplicationImpl pooled thread 317] INFO  com.browserstack.utils.Helpers - /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
 17:46:32.717 [ApplicationImpl pooled thread 317] INFO  c.b.l.BrowserStackRunExtension - Agent path: /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
 17:46:32.717 [ApplicationImpl pooled thread 317] INFO  c.b.l.BrowserStackRunExtension - Plugin version: v1.1.2
+21:38:41.332 [ApplicationImpl pooled thread 453] INFO  c.b.l.BrowserStackRunExtension - testng
+21:38:41.332 [ApplicationImpl pooled thread 453] INFO  com.browserstack.utils.Helpers - null
+21:38:41.332 [ApplicationImpl pooled thread 453] INFO  com.browserstack.utils.Helpers - /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+21:38:41.332 [ApplicationImpl pooled thread 453] INFO  c.b.l.BrowserStackRunExtension - Agent path: /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+21:38:41.332 [ApplicationImpl pooled thread 453] INFO  c.b.l.BrowserStackRunExtension - Plugin version: v1.1.2
+21:56:40.483 [ApplicationImpl pooled thread 463] INFO  c.b.l.BrowserStackRunExtension - testng
+21:56:40.483 [ApplicationImpl pooled thread 463] INFO  com.browserstack.utils.Helpers - null
+21:56:40.484 [ApplicationImpl pooled thread 463] INFO  com.browserstack.utils.Helpers - /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+21:56:40.484 [ApplicationImpl pooled thread 463] INFO  c.b.l.BrowserStackRunExtension - Agent path: /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+21:56:40.484 [ApplicationImpl pooled thread 463] INFO  c.b.l.BrowserStackRunExtension - Plugin version: v1.1.2
+21:58:17.682 [ApplicationImpl pooled thread 459] INFO  c.b.l.BrowserStackRunExtension - testng
+21:58:17.683 [ApplicationImpl pooled thread 459] INFO  com.browserstack.utils.Helpers - null
+21:58:17.683 [ApplicationImpl pooled thread 459] INFO  com.browserstack.utils.Helpers - /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+21:58:17.683 [ApplicationImpl pooled thread 459] INFO  c.b.l.BrowserStackRunExtension - Agent path: /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+21:58:17.683 [ApplicationImpl pooled thread 459] INFO  c.b.l.BrowserStackRunExtension - Plugin version: v1.1.2
+23:11:29.906 [ApplicationImpl pooled thread 504] INFO  c.b.l.BrowserStackRunExtension - testng
+23:11:29.906 [ApplicationImpl pooled thread 504] INFO  com.browserstack.utils.Helpers - null
+23:11:29.906 [ApplicationImpl pooled thread 504] INFO  com.browserstack.utils.Helpers - /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+23:11:29.906 [ApplicationImpl pooled thread 504] INFO  c.b.l.BrowserStackRunExtension - Agent path: /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+23:11:29.906 [ApplicationImpl pooled thread 504] INFO  c.b.l.BrowserStackRunExtension - Plugin version: v1.1.2
+23:12:14.000 [ApplicationImpl pooled thread 500] INFO  c.b.l.BrowserStackRunExtension - testng
+23:12:14.000 [ApplicationImpl pooled thread 500] INFO  com.browserstack.utils.Helpers - null
+23:12:14.000 [ApplicationImpl pooled thread 500] INFO  com.browserstack.utils.Helpers - /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+23:12:14.000 [ApplicationImpl pooled thread 500] INFO  c.b.l.BrowserStackRunExtension - Agent path: /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+23:12:14.000 [ApplicationImpl pooled thread 500] INFO  c.b.l.BrowserStackRunExtension - Plugin version: v1.1.2
+23:12:51.664 [ApplicationImpl pooled thread 499] INFO  c.b.l.BrowserStackRunExtension - testng
+23:12:51.665 [ApplicationImpl pooled thread 499] INFO  com.browserstack.utils.Helpers - null
+23:12:51.665 [ApplicationImpl pooled thread 499] INFO  com.browserstack.utils.Helpers - /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+23:12:51.665 [ApplicationImpl pooled thread 499] INFO  c.b.l.BrowserStackRunExtension - Agent path: /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+23:12:51.665 [ApplicationImpl pooled thread 499] INFO  c.b.l.BrowserStackRunExtension - Plugin version: v1.1.2
+23:16:08.164 [ApplicationImpl pooled thread 500] INFO  c.b.l.BrowserStackRunExtension - testng
+23:16:08.166 [ApplicationImpl pooled thread 500] INFO  com.browserstack.utils.Helpers - null
+23:16:08.166 [ApplicationImpl pooled thread 500] INFO  com.browserstack.utils.Helpers - /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+23:16:08.166 [ApplicationImpl pooled thread 500] INFO  c.b.l.BrowserStackRunExtension - Agent path: /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+23:16:08.166 [ApplicationImpl pooled thread 500] INFO  c.b.l.BrowserStackRunExtension - Plugin version: v1.1.2
+23:16:40.594 [ApplicationImpl pooled thread 499] INFO  c.b.l.BrowserStackRunExtension - testng
+23:16:40.594 [ApplicationImpl pooled thread 499] INFO  com.browserstack.utils.Helpers - null
+23:16:40.595 [ApplicationImpl pooled thread 499] INFO  com.browserstack.utils.Helpers - /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+23:16:40.595 [ApplicationImpl pooled thread 499] INFO  c.b.l.BrowserStackRunExtension - Agent path: /Users/sametozcelik/.m2/repository/com/browserstack/browserstack-java-sdk/1.11.0/browserstack-java-sdk-1.11.0.jar
+23:16:40.595 [ApplicationImpl pooled thread 499] INFO  c.b.l.BrowserStackRunExtension - Plugin version: v1.1.2
