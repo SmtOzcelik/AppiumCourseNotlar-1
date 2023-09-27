@@ -3,31 +3,30 @@ package TechProDersleri.tests.Day9_DragandDrop;
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
 import TechProDersleri.MetodStepler.ScreenApiDemos;
 import TechProDersleri.MetodStepler.ScreenMain;
-import TechProDersleri.screens.androidScreen.*;
+import TechProDersleri.screens.androidScreen.DateWidgetsScreen;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ReusableMethods;
-import utilities.Screenshot;
 
 import java.io.IOException;
 import java.time.Duration;
 
 
-public class Appium18 extends ApiDemosBaseClass {
+public class Appium19_ExpandableLists extends ApiDemosBaseClass {
 
     DateWidgetsScreen dateWidgetsScreen=new DateWidgetsScreen();
     @Test
     public void test() throws IOException, InterruptedException {
 
 
-        // Swipe Test
+        // Expandable lists test
 
         ScreenMain.contine_tik_yap();
         ScreenMain.ok_tik_yap();
@@ -37,23 +36,26 @@ public class Appium18 extends ApiDemosBaseClass {
         ScreenApiDemos.API_Demos_sayfasinda_oldugunu_dogrula();
         ScreenApiDemos.Views_tik_yap();
 
-        //Date Widgets tik yap
-        ReusableMethods.tapOnElementWithText("Date Widgets");
+        //Expandable Lists tik yap
+        ReusableMethods.tapOnElementWithText("Expandable Lists");
 
-        // 2.Inline tik yap
-        ReusableMethods.tapOnElementWithText("2. Inline");
+        // 1. Custom Adapter tik yap
+        ReusableMethods.tapOnElementWithText("1. Custom Adapter");
 
-        // 9 tiklansin
-        wait.until(ExpectedConditions.visibilityOfElementLocated(dateWidgetsScreen.num9)).click();
-        // 15 ten 45 e yeşil topu kaydirsin
+        // People Names tik yap
+        ReusableMethods.tapOnElementWithText("People Names");
+
+        //Chuck uzun bas
         TouchAction action=new TouchAction(driver);
+        WebElement chuck=driver.findElement(By.xpath("//android.widget.TextView[@text='Chuck']"));
+        action.longPress(LongPressOptions.longPressOptions().withElement(ElementOption.element(chuck)))
+                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(3)))
+                .release().perform();
 
-        WebElement num15=driver.findElement(AppiumBy.accessibilityId("15"));
-        WebElement num45=driver.findElement(AppiumBy.accessibilityId("45"));
+        // Sample menu görünürlügünü dogrula
+        ReusableMethods.isElementPresent("Sample menu");
 
-        action.press(ElementOption.element(num15))
-                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(5)))
-                .moveTo(ElementOption.element(num45)).release().perform();
+        //
 
     }
 

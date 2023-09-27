@@ -37,10 +37,13 @@ public class Appium16 extends ApiDemosBaseClass {
         ScreenViews.Drag_and_Drop_tik_yap();
 
         //1.topu 2.topun üzerine bırak
-
-        TouchAction action=new TouchAction(driver)
-                .longPress(ElementOption.element(driver.findElement(By.id("com.touchboarder.android.api.demos:id/drag_dot_1"))))
-                .moveTo(ElementOption.element(driver.findElement(By.id("com.touchboarder.android.api.demos:id/drag_dot_2")))).release().perform();
+         TouchAction action=new TouchAction(driver);
+        WebElement dot1=driver.findElement(By.id("com.touchboarder.android.api.demos:id/drag_dot_1"));
+        WebElement dot2=driver.findElement(By.id("com.touchboarder.android.api.demos:id/drag_dot_2"));
+                   action.longPress(ElementOption.element(dot1))
+                         .moveTo(ElementOption.element(dot2))
+                        .release()
+                           .perform();
         //4.topun görünürlügünü dogrula
         WebElement yeniTop=driver.findElement(dragAndDropScreen.hiddenDot);
         Assert.assertTrue(yeniTop.isDisplayed());

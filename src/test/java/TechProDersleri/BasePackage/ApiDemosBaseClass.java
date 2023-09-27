@@ -1,5 +1,6 @@
 package TechProDersleri.BasePackage;
 
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -15,6 +16,7 @@ import java.time.Duration;
 public class ApiDemosBaseClass {
     public static AndroidDriver driver;
     public static WebDriverWait wait;
+
     @BeforeMethod
     public void setUp() throws MalformedURLException {
 
@@ -33,6 +35,7 @@ public class ApiDemosBaseClass {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
     }
+
     @AfterMethod
     public void tearDown(){
         driver.quit();
