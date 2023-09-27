@@ -25,7 +25,7 @@ public class Appium17MethodKullanarak extends ApiDemosBaseClass {
     public void test() throws IOException, InterruptedException {
 
 
-        // Drag and Drop 1.topu 2.topun üzerine bırak
+        // Methodları kullanılması
 
         //continue tik yap
         driver.findElement(mainScreen.contineButon).click();

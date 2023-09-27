@@ -1,6 +1,9 @@
 package TechProDersleri.tests.Day9_DragandDrop;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
+import TechProDersleri.MetodStepler.ScreenApiDemos;
+import TechProDersleri.MetodStepler.ScreenMain;
+import TechProDersleri.MetodStepler.ScreenViews;
 import TechProDersleri.screens.androidScreen.*;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.TouchAction;
@@ -24,33 +27,14 @@ public class Appium16 extends ApiDemosBaseClass {
     public void test() throws IOException, InterruptedException {
 
 
-        // Drag and Drop 1.topu 2.topun üzerine bırak
-
-        //continue tik yap
-        driver.findElement(mainScreen.contineButon).click();
-
-        //ok tik yap
-        driver.findElement(mainScreen.okButon).click();
-
-        //uyari ok tik yap
-        driver.findElement(mainScreen.uyariOkButon).click();
-
-        //ana ekranda oldugunu dogrula
-        WebElement logo=driver.findElement(mainScreen.apiDemosLogo);
-        Assert.assertTrue(logo.isDisplayed());
-
-        //API demos tik yap
-        driver.findElement(apiDemosScreen.apiDemosButon).click();
-
-        //Api Demos sayfasinda oldugunu dogrula
-        WebElement apiDemosTextt=driver.findElement(apiDemosScreen.apiDemosText);
-        Assert.assertTrue(apiDemosTextt.isDisplayed());
-
-       //Views tik yap
-        driver.findElement(apiDemosScreen.views).click();
-
-        //Drag and Drop tik yap
-        driver.findElement(viewsScreen.dragDropButton).click();
+        ScreenMain.contine_tik_yap();
+        ScreenMain.ok_tik_yap();
+        ScreenMain.uyari_ok_tik_yap();
+        ScreenMain.ana_ekranda_oldugunu_dogrula();
+        ScreenApiDemos.API_Demos_tik_yap();
+        ScreenApiDemos.API_Demos_sayfasinda_oldugunu_dogrula();
+        ScreenApiDemos.Views_tik_yap();
+        ScreenViews.Drag_and_Drop_tik_yap();
 
         //1.topu 2.topun üzerine bırak
 

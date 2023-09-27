@@ -14,7 +14,7 @@ import java.time.Duration;
 
 public class ApiDemosBaseClass {
     public static AndroidDriver driver;
-    public WebDriverWait wait;
+    public static WebDriverWait wait;
     @BeforeMethod
     public void setUp() throws MalformedURLException {
 
@@ -24,6 +24,7 @@ public class ApiDemosBaseClass {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
+        //capabilities.setCapability("app","/Users/sametozcelik/Desktop/AppiumTumDesrler/src/Apps/apiDemos.apk");
         capabilities.setCapability("appPackage","com.touchboarder.android.api.demos");
         capabilities.setCapability("appActivity","com.touchboarder.androidapidemos.MainActivity");
         capabilities.setCapability("noReset","false");
