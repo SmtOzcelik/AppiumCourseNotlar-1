@@ -13,5 +13,6 @@ public class MainScreeniOS {
     public By pickerView=AppiumBy.accessibilityId("Picker View");
     public By progressViews=AppiumBy.accessibilityId("Progress Views");
     public By search=AppiumBy.accessibilityId("Search");
+    public By switches=AppiumBy.accessibilityId("Switches");
 
 }
