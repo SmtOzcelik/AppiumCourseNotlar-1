@@ -6,7 +6,7 @@ import TechProDersleri.screens.iosScreen.MainScreeniOS;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Appium25 extends BaseClass_iOS {
+public class Appium25_AlertViews extends BaseClass_iOS {
 
     MainScreeniOS mainScreeniOS=new MainScreeniOS();
     AlertViewScreen alertViewScreen=new AlertViewScreen();
@@ -34,8 +34,7 @@ public class Appium25 extends BaseClass_iOS {
     }
     @Test
     public void test02() throws InterruptedException {
-/*
-        Secure text entry den sonra locate alinamiyor
+
         // Test = Secure Text Entry ac ok tiklananmiyor
         // Alert Views tik yap
         driver.findElement(mainScreeniOS.alertViewsButon).click();
@@ -49,9 +48,9 @@ public class Appium25 extends BaseClass_iOS {
         System.out.println("popupMessage = " + popupMessage);
 
         // ok butonu tiklanamaz dogrula
-        String isEnable=driver.findElement(alertViewScreen.okButon).getAttribute("enable");
+        String isEnable=driver.findElement(alertViewScreen.okButon).getAttribute("enabled");
         System.out.println("isEnable = " + isEnable);
-        Assert.assertEquals(isEnable,"false");  */
+        Assert.assertEquals(isEnable,"false");
 
     }
 }

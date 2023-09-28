@@ -6,7 +6,7 @@ import TechProDersleri.screens.iosScreen.MainScreeniOS;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Appium24 extends BaseClass_iOS {
+public class Appium24_AlertViews extends BaseClass_iOS {
 
     MainScreeniOS mainScreeniOS=new MainScreeniOS();
     AlertViewScreen alertViewScreen=new AlertViewScreen();
