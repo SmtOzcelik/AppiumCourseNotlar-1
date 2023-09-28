@@ -1,17 +1,15 @@
 package TechProDersleri.tests.Android.Day9_DragandDrop;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
-import TechProDersleri.MetodStepler.ScreenApiDemos;
-import TechProDersleri.MetodStepler.ScreenMain;
+import TechProDersleri.MetodStepler.Android.ScreenApiDemos;
+import TechProDersleri.MetodStepler.Android.ScreenMain;
 import TechProDersleri.screens.androidScreen.DateWidgetsScreen;
-import io.appium.java_client.AppiumBy;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 import utilities.ReusableMethods;
 

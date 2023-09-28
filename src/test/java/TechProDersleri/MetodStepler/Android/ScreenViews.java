@@ -1,4 +1,4 @@
-package TechProDersleri.MetodStepler;
+package TechProDersleri.MetodStepler.Android;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
 import TechProDersleri.screens.androidScreen.ApiDemosScreen;

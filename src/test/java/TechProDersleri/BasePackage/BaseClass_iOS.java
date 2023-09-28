@@ -26,9 +26,9 @@ public class BaseClass_iOS {
         iOSSafariCaps.setCapability(MobileCapabilityType.PLATFORM_VERSION,"16.4");
         iOSSafariCaps.setCapability(MobileCapabilityType.AUTOMATION_NAME,"XCUITest");
         //iOSSafariCaps.setCapability("appium:browserName", "Safari");
-        //iOSSafariCaps.setCapability("app","/Users/sametozcelik/Desktop/AppiumTumDesrler/src/Apps/apiDemos.apk");
+        iOSSafariCaps.setCapability("app","/Users/sametozcelik/Library/Developer/Xcode/DerivedData/UIKitCatalog-bptxctkzrqytljgmkzebfdslruzi/Build/Products/Debug-iphonesimulator/UIKitCatalog.app");
 
-        driver=new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"),iOSSafariCaps);
+        driver=new AppiumDriver(new URL("http://127.0.0.1:4723"),iOSSafariCaps);
         wait=new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 

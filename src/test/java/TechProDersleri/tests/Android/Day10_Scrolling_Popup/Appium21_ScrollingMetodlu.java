@@ -1,8 +1,8 @@
 package TechProDersleri.tests.Android.Day10_Scrolling_Popup;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
-import TechProDersleri.MetodStepler.ScreenApiDemos;
-import TechProDersleri.MetodStepler.ScreenMain;
+import TechProDersleri.MetodStepler.Android.ScreenApiDemos;
+import TechProDersleri.MetodStepler.Android.ScreenMain;
 import org.testng.annotations.Test;
 import utilities.ReusableMethods;
 
