@@ -16,6 +16,10 @@ public class AlertViewScreen {
     public By other= AppiumBy.accessibilityId("Other");
     public By popupText=AppiumBy.iOSClassChain("**/XCUIElementTypeStaticText[`label == \"A Short Title Is Best\"`]");
     public By cancelButon= AppiumBy.accessibilityId("Cancel");
+    public By choiceOneButon= AppiumBy.accessibilityId("Choice One");
+    public By choiceTwoButon= AppiumBy.accessibilityId("Choice Two");
+    public By textbox=AppiumBy.className("XCUIElementTypeTextField");
+    public By secureTextEntry=AppiumBy.accessibilityId("Secure Text Entry");
 
 
 }

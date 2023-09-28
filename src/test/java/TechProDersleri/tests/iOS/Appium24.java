@@ -64,4 +64,59 @@ public class Appium24 extends BaseClass_iOS {
         driver.findElement(alertViewScreen.okButon);
 
     }
+    @Test
+    public void test04() throws InterruptedException {
+
+        // Test = other ac choice one tik yap
+        // Alert Views tik yap
+        driver.findElement(mainScreeniOS.alertViewsButon).click();
+
+        //other tik yap
+        driver.findElement(alertViewScreen.other).click();
+
+        //popup mesaj dogrula
+        String popupMessage=driver.findElement(alertViewScreen.popupText).getAttribute("name");
+        Assert.assertEquals(popupMessage,"A Short Title Is Best");
+        System.out.println("popupMessage = " + popupMessage);
+        //choiceOneButon tik yap
+        driver.findElement(alertViewScreen.choiceOneButon);
+
+    }
+    @Test
+    public void test05() throws InterruptedException {
+
+        // Test = other ac choice two tik yap
+        // Alert Views tik yap
+        driver.findElement(mainScreeniOS.alertViewsButon).click();
+
+        //other tik yap
+        driver.findElement(alertViewScreen.other).click();
+
+        //popup mesaj dogrula
+        String popupMessage=driver.findElement(alertViewScreen.popupText).getAttribute("name");
+        Assert.assertEquals(popupMessage,"A Short Title Is Best");
+        System.out.println("popupMessage = " + popupMessage);
+        //choiceTwoButon tik yap
+        driver.findElement(alertViewScreen.choiceTwoButon);
+
+    }
+    @Test
+    public void test06() throws InterruptedException {
+
+        // Test = other ac cancel tik yap
+        // Alert Views tik yap
+        driver.findElement(mainScreeniOS.alertViewsButon).click();
+
+        //other tik yap
+        driver.findElement(alertViewScreen.other).click();
+
+        //popup mesaj dogrula
+        String popupMessage=driver.findElement(alertViewScreen.popupText).getAttribute("name");
+        Assert.assertEquals(popupMessage,"A Short Title Is Best");
+        System.out.println("popupMessage = " + popupMessage);
+        //cancel tik yap
+        driver.findElement(alertViewScreen.cancelButon);
+
+    }
+
 }
