@@ -3,7 +3,7 @@ package TechProDersleri.tests.Android.Day10_Scrolling_Popup;
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
 import TechProDersleri.MetodStepler.Android.ScreenApiDemos;
 import TechProDersleri.MetodStepler.Android.ScreenMain;
-import TechProDersleri.screens.androidScreen.ViewsScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.ViewsScreen;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.Dimension;

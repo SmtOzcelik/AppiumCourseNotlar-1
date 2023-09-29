@@ -1,16 +1,16 @@
 package TechProDersleri.tests.Android.Day8_Switch;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
-import TechProDersleri.screens.androidScreen.*;
+import TechProDersleri.screens.androidScreen.ApiDemos.ApiDemosScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.MainScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.PreferenceScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.SwitchScreen;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Screenshot;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.time.Duration;
 
 
 public class Appium14 extends ApiDemosBaseClass {

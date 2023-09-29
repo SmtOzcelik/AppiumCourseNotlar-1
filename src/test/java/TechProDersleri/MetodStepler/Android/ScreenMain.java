@@ -1,12 +1,10 @@
 package TechProDersleri.MetodStepler.Android;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
-import TechProDersleri.screens.androidScreen.MainScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.MainScreen;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import utilities.ReusableMethods;
 
 public class ScreenMain extends ApiDemosBaseClass {
     static MainScreen mainScreen=new MainScreen();

@@ -1,13 +1,7 @@
 package TechProDersleri.tests.Android.Day9_DragandDrop;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
-import TechProDersleri.screens.androidScreen.ApiDemosScreen;
-import TechProDersleri.screens.androidScreen.DragAndDropScreen;
-import TechProDersleri.screens.androidScreen.MainScreen;
-import TechProDersleri.screens.androidScreen.ViewsScreen;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.touch.offset.ElementOption;
-import org.openqa.selenium.By;
+import TechProDersleri.screens.androidScreen.ApiDemos.MainScreen;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;

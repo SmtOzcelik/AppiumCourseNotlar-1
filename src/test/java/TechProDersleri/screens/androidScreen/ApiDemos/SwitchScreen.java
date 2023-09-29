@@ -1,4 +1,4 @@
-package TechProDersleri.screens.androidScreen;
+package TechProDersleri.screens.androidScreen.ApiDemos;
 
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;

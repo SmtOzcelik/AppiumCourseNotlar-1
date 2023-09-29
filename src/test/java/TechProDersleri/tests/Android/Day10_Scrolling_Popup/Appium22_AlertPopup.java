@@ -3,7 +3,7 @@ package TechProDersleri.tests.Android.Day10_Scrolling_Popup;
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
 import TechProDersleri.MetodStepler.Android.ScreenApiDemos;
 import TechProDersleri.MetodStepler.Android.ScreenMain;
-import TechProDersleri.screens.androidScreen.PopupMenuScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.PopupMenuScreen;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;

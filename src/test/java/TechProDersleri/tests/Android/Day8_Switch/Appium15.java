@@ -1,10 +1,10 @@
 package TechProDersleri.tests.Android.Day8_Switch;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
-import TechProDersleri.screens.androidScreen.ApiDemosScreen;
-import TechProDersleri.screens.androidScreen.MainScreen;
-import TechProDersleri.screens.androidScreen.PreferenceScreen;
-import TechProDersleri.screens.androidScreen.SwitchScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.ApiDemosScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.MainScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.PreferenceScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.SwitchScreen;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;

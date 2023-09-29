@@ -1,11 +1,8 @@
 package TechProDersleri.MetodStepler.Android;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
-import TechProDersleri.screens.androidScreen.ApiDemosScreen;
-import TechProDersleri.screens.androidScreen.ViewsScreen;
-import org.openqa.selenium.WebElement;
+import TechProDersleri.screens.androidScreen.ApiDemos.ViewsScreen;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
 
 public class ScreenViews extends ApiDemosBaseClass {
     static ViewsScreen viewsScreen=new ViewsScreen();

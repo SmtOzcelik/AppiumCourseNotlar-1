@@ -1,7 +1,7 @@
 package TechProDersleri.MetodStepler.Android;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
-import TechProDersleri.screens.androidScreen.ApiDemosScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.ApiDemosScreen;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;

@@ -3,7 +3,7 @@ package TechProDersleri.tests.Android.Day9_DragandDrop;
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
 import TechProDersleri.MetodStepler.Android.ScreenApiDemos;
 import TechProDersleri.MetodStepler.Android.ScreenMain;
-import TechProDersleri.screens.androidScreen.DateWidgetsScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.DateWidgetsScreen;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.WaitOptions;

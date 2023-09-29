@@ -1,10 +1,10 @@
 package TechProDersleri.tests.Android.Day7_Screen_Olusturma;
 
 import TechProDersleri.BasePackage.ApiDemosBaseClass;
-import TechProDersleri.screens.androidScreen.ApiDemosScreen;
-import TechProDersleri.screens.androidScreen.MainScreen;
-import TechProDersleri.screens.androidScreen.PreferenceDependenciesScreen;
-import TechProDersleri.screens.androidScreen.PreferenceScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.ApiDemosScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.MainScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.PreferenceDependenciesScreen;
+import TechProDersleri.screens.androidScreen.ApiDemos.PreferenceScreen;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
