@@ -11,4 +11,5 @@ public class ECommenceScreen {
    public By femaleRadioButon=AppiumBy.id("com.androidsample.generalstore:id/radioFemale");
     public By nameBox=AppiumBy.id("com.androidsample.generalstore:id/nameField");
     public By countrySpinner=AppiumBy.id("com.androidsample.generalstore:id/spinnerCountry");
+
 }

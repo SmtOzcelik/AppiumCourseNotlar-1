@@ -5,11 +5,13 @@ import TechProDersleri.screens.androidScreen.ECommence.ECommenceScreen;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilities.ReusableMethods;
 
-public class ECommerceNegativeLogin01 extends ECommerceAppBaseClass {
+import java.time.Duration;
+
+public class ECommercePositiveLogin02 extends ECommerceAppBaseClass {
     /*
     //1- Fill the form details and verify Toast error messages displayed appropriately for wrong inputs
     //1- hatali data ile form doldurdugunuzda hata mesajini dogrulayin
@@ -22,43 +24,10 @@ public class ECommerceNegativeLogin01 extends ECommerceAppBaseClass {
      */
     ECommenceScreen eCommenceScreen=new ECommenceScreen();
 
+
     @Test
     public void test01() throws InterruptedException {
-        //1- hatali data ile form doldurdugunuzda hata mesajini dogrulayin
-        // negative test name box boş olmalı
-
-        // anasayfada oldugunu dogrula
-        String homeScreenText=driver.findElement(eCommenceScreen.homeScreenTitle).getText();
-        Assert.assertEquals(homeScreenText,"General Store");
-
-        //country olarak Angola sec
-        //burda kutuyu locate edip Angola send edemiyoruz o yüzden Angola in direk locate aldık
-        //önce ülke sec butonu tik yap sonra ülke seç
-         driver.findElement(eCommenceScreen.countrySpinner).click();
-
-        WebElement expectedCountry=driver.findElement(By.xpath("//android.widget.TextView[@text='Angola']"));
-        expectedCountry.click();
-
-        //name box boş olmali
-        driver.findElement(eCommenceScreen.nameBox).click();
-        driver.findElement(eCommenceScreen.nameBox).clear();
-        Assert.assertEquals(driver.findElement(eCommenceScreen.nameBox).getText(),"Enter name here");
-        driver.navigate().back();
-        //female tik yap
-        driver.findElement(eCommenceScreen.femaleRadioButon).click();
-
-        // lets shop buton tik yap
-        driver.findElement(eCommenceScreen.letsShopButon).click();
-
-        //popup mesajini dogrula
-        String mesaj=driver.findElement(eCommenceScreen.popupMessage).getText();
-        Assert.assertEquals(mesaj,"Please enter your name");
-
-    }
-    @Test
-    public void test02() throws InterruptedException {
-        //1- hatali data ile form doldurdugunuzda hata mesajini dogrulayin
-        // negative test name box boş olmalı
+        //1- dogru data ile form doldurdugunuz
 
         // anasayfada oldugunu dogrula
         String homeScreenText=driver.findElement(eCommenceScreen.homeScreenTitle).getText();
@@ -71,10 +40,10 @@ public class ECommerceNegativeLogin01 extends ECommerceAppBaseClass {
         driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Belgium\"))"));
         WebElement expectedCountry=driver.findElement(By.xpath("//android.widget.TextView[@text='Belgium']"));
         expectedCountry.click();
-        //name box boş olmali
+        //name box samet gir
         driver.findElement(eCommenceScreen.nameBox).click();
-        driver.findElement(eCommenceScreen.nameBox).clear();
-        Assert.assertEquals(driver.findElement(eCommenceScreen.nameBox).getText(),"Enter name here");
+        driver.findElement(eCommenceScreen.nameBox).sendKeys("samet");
+        Assert.assertEquals(driver.findElement(eCommenceScreen.nameBox).getText(),"samet");
         driver.navigate().back();
         //female tik yap
         driver.findElement(eCommenceScreen.femaleRadioButon).click();
@@ -82,9 +51,10 @@ public class ECommerceNegativeLogin01 extends ECommerceAppBaseClass {
         // lets shop buton tik yap
         driver.findElement(eCommenceScreen.letsShopButon).click();
 
-        //popup mesajini dogrula
-        String mesaj=driver.findElement(eCommenceScreen.popupMessage).getText();
-        Assert.assertEquals(mesaj,"Please enter your name");
+        // Products sayfasina gectiğini dogrula
+        wait.until(ExpectedConditions.visibilityOfElementLocated(eCommenceScreen.homeScreenTitle));
+        String productsText=driver.findElement(eCommenceScreen.homeScreenTitle).getText();
+        Assert.assertEquals(productsText,"Products");
 
     }
 
