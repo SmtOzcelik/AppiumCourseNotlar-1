@@ -68,8 +68,8 @@ public class ECommerceNegativeLogin01 extends ECommerceAppBaseClass {
         //burda kutuyu locate edip Angola send edemiyoruz o yüzden Angola in direk locate aldık
         //önce ülke sec butonu tik yap sonra ülke seç
         driver.findElement(eCommenceScreen.countrySpinner).click();
-        driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Turkey\"))"));
-        WebElement expectedCountry=driver.findElement(By.xpath("//android.widget.TextView[@text='Turkey']"));
+        driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Belgium\"))"));
+        WebElement expectedCountry=driver.findElement(By.xpath("//android.widget.TextView[@text='Belgium']"));
         expectedCountry.click();
         //name box boş olmali
         driver.findElement(eCommenceScreen.nameBox).click();
