@@ -28,6 +28,7 @@ public class ECommerceAppBaseClass {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
+
         capabilities.setCapability("app","/Users/sametozcelik/Desktop/AppiumTumDesrler/src/Apps/General-Store.apk");
         capabilities.setCapability("noReset","false");
         driver=new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);

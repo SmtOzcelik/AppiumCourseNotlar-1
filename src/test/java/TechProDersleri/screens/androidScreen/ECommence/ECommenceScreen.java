@@ -27,5 +27,8 @@ public class ECommenceScreen {
     public By termButon=AppiumBy.id("com.androidsample.generalstore:id/termsButton");
     public By alertTitle=AppiumBy.id("com.androidsample.generalstore:id/alertTitle");
     public By closeButon=AppiumBy.id("android:id/button1");
+    public By checkBox=AppiumBy.className("android.widget.CheckBox");
+    public By proceedButon=AppiumBy.id("com.androidsample.generalstore:id/btnProceed");
+    public By searchBox=AppiumBy.className("android.widget.EditText");
 
 }
