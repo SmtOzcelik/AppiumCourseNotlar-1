@@ -15,7 +15,11 @@ public class ECommenceScreen {
     public By addButon1=AppiumBy.xpath("(//android.widget.TextView[@text='ADD TO CART'])[1]");
     public By addButon2=AppiumBy.xpath("(//android.widget.TextView[@text='ADD TO CART'])[2]");
     public By sepetButon=AppiumBy.id("com.androidsample.generalstore:id/appbar_btn_cart");
+    public By nikeBlazerMid77= AppiumBy.xpath("//android.widget.TextView[@text='Nike Blazer Mid '77']");
+    public By firstUrun=AppiumBy.xpath("(//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productName'])[1]");
+    public By secondUrun=AppiumBy.xpath("(//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productName'])[2]");
     public By airJordon4Retro= AppiumBy.xpath("//android.widget.TextView[@text='Air Jordan 4 Retro']");
+    public By jordan6Rings= AppiumBy.xpath("//android.widget.TextView[@text='Jordan 6 Rings']");
     public By airJordan1MidSE=AppiumBy.xpath("//android.widget.TextView[@text='Air Jordan 1 Mid SE']");
     public By firstProductPrice=AppiumBy.xpath("(//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productPrice'])[1]");
     public By secondProductPrice=AppiumBy.xpath("(//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productPrice'])[2]");

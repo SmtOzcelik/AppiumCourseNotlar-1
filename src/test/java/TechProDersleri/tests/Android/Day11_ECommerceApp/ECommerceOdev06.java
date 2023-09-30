@@ -16,24 +16,15 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.time.Duration;
 
-public class ECommerceLongPrees05 extends ECommerceAppBaseClass {
-    /*
-    //1- Fill the form details and verify Toast error messages displayed appropriately for wrong inputs
-    //1- hatali data ile form doldurdugunuzda hata mesajini dogrulayin
-//2-Shop the items in the app by scrolling to specific Product and add to cart
-//3-Validate if the items selected in the page 2 are matching with the items displayed in check out page
-//4- Validate the total Amount displayed in the checkout page matches with sum of product amounts selected for shopping
-//5-Validate Mobile gestures working for link (long press) and navigate to WebView 
-//6-Verify if user can do operations on Web view and navigate back to native app if needed.
-(go to google and search “appium” then navigate to NATIVE APP and verify it)
+public class ECommerceOdev06 extends ECommerceAppBaseClass {
 
-     */
     ECommenceScreen eCommenceScreen=new ECommenceScreen();
 
 
     @Test
     public void test01() throws InterruptedException, IOException {
-        //4- Please read our terms of conditions press yap gelen popup dogrula
+        //Nike Blazer Mid '77 , Jordan 6 Rings ürünlerini sec
+        // Please read our terms of conditions press yap gelen popup dogrula
 
         // anasayfada oldugunu dogrula
         String homeScreenText=waitToBeVisiblegetText(eCommenceScreen.homeScreenTitle);
@@ -61,10 +52,13 @@ public class ECommerceLongPrees05 extends ECommerceAppBaseClass {
         String productsText=waitToBeVisiblegetText(eCommenceScreen.homeScreenTitle);
         Assert.assertEquals(productsText,"Products");
 
-        // ilk ürün seçilsin
+        // Nike Blazer Mid '77 ürün seçilsin
+        driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Nike Blazer Mid '77\"))"));
         waitToBeClickable(eCommenceScreen.addButon1);
 
-        // ikinci ürün seçilsin fakat burda index yapısı kullanıldığı icin ilk seçtik 2. ilke gectiği icin addbuton1 kullandık
+        // Jordan 6 Rings ürün seçilsin metod ile scroll yaptık ekranda en üsttedik ürün hep 1. indeks oluyor
+        // yani her add to cart butonu ait locate olmuyor
+        scrollWithUiScrollable("Jordan 6 Rings");
         waitToBeClickable(eCommenceScreen.addButon1);
 
        // sepete git ve sepette oldugunu dogrula
@@ -72,13 +66,13 @@ public class ECommerceLongPrees05 extends ECommerceAppBaseClass {
         String cartText=waitToBeVisiblegetText(eCommenceScreen.homeScreenTitle);
         Assert.assertEquals(cartText,"Cart");
 
-        //ilk ürünü dogrula
+        //ilk ürünü dogrula Nike Blazer Mid '77
         String ilkUrun=waitToBeVisiblegetText(eCommenceScreen.firstUrun);
-        Assert.assertEquals(ilkUrun,"Air Jordan 4 Retro");
+        Assert.assertEquals(ilkUrun,"Nike Blazer Mid '77");
 
-        //ikinci ürünü dogrula
+        //ikinci ürünü dogrula Jordan 6 Rings
         String ikinciUrun=waitToBeVisiblegetText(eCommenceScreen.secondUrun);
-        Assert.assertEquals(ikinciUrun,"Air Jordan 1 Mid SE");
+        Assert.assertEquals(ikinciUrun,"Jordan 6 Rings");
 
         // 1. ürünün fiyatın al substring kullanildi
         double firstUrun=Double.parseDouble(driver.findElement(eCommenceScreen.firstProductPrice).getText().substring(1));
