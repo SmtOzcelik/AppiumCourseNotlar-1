@@ -2,7 +2,10 @@ package TechProDersleri.BasePackage;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -37,4 +40,18 @@ public class ECommerceAppBaseClass {
         driver.quit();
     }
 
+    public static void waitToBeVisible(By element) {
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+    }
+
+    public static void waitToBeClickable(By element) {
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(element)).click();
+    }
+    public static String waitToBeVisiblegetText(By element) {
+
+       return wait.until(ExpectedConditions.visibilityOfElementLocated(element)).getText();
+
+    }
 }
