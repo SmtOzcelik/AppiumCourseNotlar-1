@@ -17,6 +17,8 @@ public class ECommenceScreen {
     public By sepetButon=AppiumBy.id("com.androidsample.generalstore:id/appbar_btn_cart");
     public By airJordon4Retro= AppiumBy.xpath("//android.widget.TextView[@text='Air Jordan 4 Retro']");
     public By airJordan1MidSE=AppiumBy.xpath("//android.widget.TextView[@text='Air Jordan 1 Mid SE']");
-
+    public By firstProductPrice=AppiumBy.xpath("(//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productPrice'])[1]");
+    public By secondProductPrice=AppiumBy.xpath("(//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productPrice'])[2]");
+    public By totalProductPrice=AppiumBy.id("com.androidsample.generalstore:id/totalAmountLbl");
 
 }

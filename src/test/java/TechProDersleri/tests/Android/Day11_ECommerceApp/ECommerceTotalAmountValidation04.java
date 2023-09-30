@@ -5,14 +5,12 @@ import TechProDersleri.screens.androidScreen.ECommence.ECommenceScreen;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilities.Screenshot;
 
 import java.io.IOException;
 
-public class ECommerceShoping03 extends ECommerceAppBaseClass {
+public class ECommerceTotalAmountValidation04 extends ECommerceAppBaseClass {
     /*
     //1- Fill the form details and verify Toast error messages displayed appropriately for wrong inputs
     //1- hatali data ile form doldurdugunuzda hata mesajini dogrulayin
@@ -28,7 +26,7 @@ public class ECommerceShoping03 extends ECommerceAppBaseClass {
 
     @Test
     public void test01() throws InterruptedException, IOException {
-        //2- dogru data ile form doldurdugunuz ve 2 adet ürün seçiniz
+        //3- dogru data ile form doldurdugunuz 2 adet ürün seciniz ve seçilen ürünlerin total tutar assert et
 
         // anasayfada oldugunu dogrula
         String homeScreenText=waitToBeVisiblegetText(eCommenceScreen.homeScreenTitle);
@@ -74,6 +72,22 @@ public class ECommerceShoping03 extends ECommerceAppBaseClass {
         //ikinci ürünü dogrula
         String ikinciUrun=waitToBeVisiblegetText(eCommenceScreen.airJordan1MidSE);
         Assert.assertEquals(ikinciUrun,"Air Jordan 1 Mid SE");
+
+        // 1. ürünün fiyatın al substring kullanildi
+        double firstUrun=Double.parseDouble(driver.findElement(eCommenceScreen.firstProductPrice).getText().substring(1));
+        System.out.println("firstUrun = " + firstUrun);
+
+        //2.ürünün fiyatin al replace kullanildi
+        double secondUrun=Double.parseDouble(driver.findElement(eCommenceScreen.secondProductPrice).getText().replace("$",""));
+        System.out.println("secondUrun = " + secondUrun);
+
+        //Total fiyat al ve dogrula
+        double totalFiyat=Double.parseDouble(driver.findElement(eCommenceScreen.totalProductPrice).getText().substring(1));
+        System.out.println("totalFiyat = " + totalFiyat);
+        Assert.assertEquals(totalFiyat,firstUrun+secondUrun);
+
+
+
     }
 
 }
