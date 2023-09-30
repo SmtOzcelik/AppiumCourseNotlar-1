@@ -20,5 +20,8 @@ public class ECommenceScreen {
     public By firstProductPrice=AppiumBy.xpath("(//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productPrice'])[1]");
     public By secondProductPrice=AppiumBy.xpath("(//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productPrice'])[2]");
     public By totalProductPrice=AppiumBy.id("com.androidsample.generalstore:id/totalAmountLbl");
+    public By termButon=AppiumBy.id("com.androidsample.generalstore:id/termsButton");
+    public By alertTitle=AppiumBy.id("com.androidsample.generalstore:id/alertTitle");
+    public By closeButon=AppiumBy.id("android:id/button1");
 
 }

@@ -3,14 +3,20 @@ package TechProDersleri.tests.Android.Day11_ECommerceApp;
 import TechProDersleri.BasePackage.ECommerceAppBaseClass;
 import TechProDersleri.screens.androidScreen.ECommence.ECommenceScreen;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.LongPressOptions;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.ElementOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.time.Duration;
 
-public class ECommerceTotalAmountValidation04 extends ECommerceAppBaseClass {
+public class ECommerceLongPrees05 extends ECommerceAppBaseClass {
     /*
     //1- Fill the form details and verify Toast error messages displayed appropriately for wrong inputs
     //1- hatali data ile form doldurdugunuzda hata mesajini dogrulayin
@@ -27,7 +33,7 @@ public class ECommerceTotalAmountValidation04 extends ECommerceAppBaseClass {
 
     @Test
     public void test01() throws InterruptedException, IOException {
-        //3- dogru data ile form doldurdugunuz 2 adet ürün seciniz ve seçilen ürünlerin total tutar assert et
+        //4- Please read our terms of conditions press yap gelen popup dogrula
 
         // anasayfada oldugunu dogrula
         String homeScreenText=waitToBeVisiblegetText(eCommenceScreen.homeScreenTitle);
@@ -86,6 +92,24 @@ public class ECommerceTotalAmountValidation04 extends ECommerceAppBaseClass {
         double totalFiyat=Double.parseDouble(driver.findElement(eCommenceScreen.totalProductPrice).getText().substring(1));
         System.out.println("totalFiyat = " + totalFiyat);
         Assert.assertEquals(totalFiyat,firstUrun+secondUrun);
+
+        // 'Please read our terms of conditions' termButonu tek tik ile acılmadığını dogrula
+        waitToBeClickable(eCommenceScreen.termButon);
+        Assert.assertEquals(cartText,"Cart"); // hala sepet ekranındayız acılmadı alert
+
+        //termsBtunonu longPress (uzun bas) yap alert mesajini dogrula
+        TouchAction action=new TouchAction(driver);
+        action.longPress(LongPressOptions.longPressOptions()
+                .withElement(ElementOption.element(driver.findElement(eCommenceScreen.termButon))))
+                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(5)))//burasi acılmasini beklemek icin eklendi
+                .release().perform();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(eCommenceScreen.alertTitle));
+        Assert.assertTrue(driver.findElement(eCommenceScreen.alertTitle).isDisplayed());
+
+        //alert mesajini kapat ve mesajin kapandığını dogrula
+        waitToBeClickable(eCommenceScreen.closeButon);
+        Assert.assertEquals(cartText,"Cart");
+
 
 
 
