@@ -26,6 +26,7 @@ public class BaseClass_iOS_Calcultor {
         iOSSafariCaps.setCapability(MobileCapabilityType.AUTOMATION_NAME,"XCUITest");
         //iOSSafariCaps.setCapability("appium:browserName", "Safari");
         iOSSafariCaps.setCapability("bundleId","com.hackingwithswift.Calculator");
+        iOSSafariCaps.setCapability("deviceOrientation","landscape");
 
         driver=new AppiumDriver(new URL("http://127.0.0.1:4723"),iOSSafariCaps);
         wait=new WebDriverWait(driver, Duration.ofSeconds(10));
