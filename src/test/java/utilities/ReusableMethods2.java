@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class ReusableMethods2 {
+
 /*  bilerek yoruma aldim bu class cucumber ve testNG de ki Driver formatında düzenlenebilir
     static Actions actions = new Actions(Driver.getDriver());
 
